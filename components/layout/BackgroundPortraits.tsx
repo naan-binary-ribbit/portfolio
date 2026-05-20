@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import DitheredImage from '@/components/ui/DitheredImage';
 
 export default function BackgroundPortraits() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,13 +24,12 @@ export default function BackgroundPortraits() {
         transition={{ duration: 0.5 }}
         className="absolute top-[15%] left-[10%] hidden lg:flex flex-col gap-3 mix-blend-screen"
       >
-        <div className="relative w-48 h-64 border border-retro-green/10 bg-black/10 overflow-hidden grayscale contrast-150">
-          <Image
+        <div className="relative w-48 h-64 border border-retro-green/10 bg-black/10 overflow-hidden">
+          <DitheredImage
             src="/assets/glitch_green.png"
-            alt="Glitch Portrait Green"
-            fill
-            className="object-cover transition-transform duration-[10s] hover:scale-110"
-            priority
+            colorNum={2}
+            pixelSize={2}
+            className="transition-transform duration-[10s] hover:scale-110"
           />
           {/* Glitchy Loading Bar */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-retro-green/20">
@@ -59,13 +59,11 @@ export default function BackgroundPortraits() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="absolute bottom-[20%] right-[15%] hidden lg:flex flex-col gap-3 items-end mix-blend-screen"
       >
-        <div className="relative w-64 h-48 border border-retro-orange/10 bg-black/10 overflow-hidden grayscale contrast-150">
-          <Image
+        <div className="relative w-64 h-48 border border-retro-orange/10 bg-black/10 overflow-hidden">
+          <DitheredImage
             src="/assets/glitch_orange.png"
-            alt="Glitch Portrait Orange"
-            fill
-            className="object-cover"
-            priority
+            colorNum={2}
+            pixelSize={2}
           />
           {/* Glitchy Loading Ring / Indicator */}
           <div className="absolute top-4 right-4 flex flex-col items-end gap-1">

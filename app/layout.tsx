@@ -7,6 +7,7 @@ import GridBackground from '@/components/layout/GridBackground'
 import AsciiWaves from '@/components/layout/AsciiWaves'
 import BackgroundPortraits from '@/components/layout/BackgroundPortraits'
 import DisclaimerPopup from '@/components/ui/DisclaimerPopup'
+import SideMatrixBars from '@/components/layout/SideMatrixBars'
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ['latin'],
@@ -40,6 +41,7 @@ export default function RootLayout({
                 <GridBackground />
                 <BackgroundPortraits />
                 <AsciiWaves />
+                <SideMatrixBars />
                 <DisclaimerPopup />
                 <main className="relative z-10">
                     {children}
